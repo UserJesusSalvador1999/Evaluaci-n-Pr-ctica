@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantel Educativo - Portal Estudiantil</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Tu archivo CSS local -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="bg-light">
+
+    <!-- COMPONENTE 1: NAVBAR PRINCIPAL -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Portal Educativo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavegacion">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Menú Rápido
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- COMPONENTE 2: CARRUSEL BANNER -->
+    <div id="carruselPrincipal" class="carousel slide shadow-sm overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carruselPrincipal" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Imagenes/descargar.jpg" class="d-block w-100 img-carrusel" alt="Imagen 1">
+                <div class="capa-oscura"></div>
+                <div class="carousel-caption d-none d-md-block text-start">
+                    <h1 class="display-4 fw-bold text-white">Bienvenido al Ciclo Escolar</h1>
+                    <p class="lead text-light">Consulta las fechas importantes y exámenes programados para este semestre.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Imagenes/descargar1.jpg" class="d-block w-100 img-carrusel" alt="Imagen 2">
+                <div class="capa-oscura"></div>
+                <div class="carousel-caption d-none d-md-block text-center">
+                    <h1 class="display-4 fw-bold text-white">Semana de Evaluaciones</h1>
+                    <p class="lead text-light">Es momento de entregar tus proyectos finales de desarrollo web y bases de datos.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Imagenes/OIP.jpg" class="d-block w-100 img-carrusel" alt="Imagen 3">
+                <div class="capa-oscura"></div>
+                <div class="carousel-caption d-none d-md-block text-end">
+                    <h1 class="display-4 fw-bold text-white">Biblioteca Virtual</h1>
+                    <p class="lead text-light">Accede a todos los recursos de tus materias.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1); width: 3rem; height: 3rem;"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselPrincipal" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1); width: 3rem; height: 3rem;"></span>
+        </button>
+    </div>
+
+    <!-- ESTRUCTURA PRINCIPAL -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            
+            <!-- SIDEBAR -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar border-end min-vh-100 p-3 shadow-sm">
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action active rounded-2 mb-1">
+                        <i class="bi bi-grid me-2"></i> Tablero Principal
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action rounded-2 mb-1">
+                        <i class="bi bi-journal-text me-2"></i> Calificaciones
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action rounded-2">
+                        <i class="bi bi-clock me-2"></i> Horarios
+                    </a>
+                </div>
+            </nav>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                
+                <!-- BREADCRUMBS STEPPER -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb custom-stepper shadow-sm m-0 p-0 rounded-3 overflow-hidden">
+                        <li class="breadcrumb-item step-item">
+                            <a href="#" class="step-link text-white fw-bold">
+                                <i class="bi bi-house-door-fill me-2"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item step-item">
+                            <a href="#" class="step-link text-white fw-bold">
+                                Ingeniería
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item step-item active-step" aria-current="page">
+                            <span class="step-link text-light opacity-75">
+                                Tablero
+                            </span>
+                        </li>
+                    </ol>
+                </nav>
+
+                <!-- FILA SUPERIOR: CALENDARIO Y TAREAS -->
+                <div class="row mb-5">
+                    
+                    <!-- CALENDARIO -->
+                    <div class="col-lg-5 text-center mb-4 mb-lg-0" style="position: relative; z-index: 100;">
+                        <div class="card border-0 shadow-sm h-100 bg-white d-flex align-items-center justify-content-center p-4">
+                            <div>
+                                <h3 class="fw-bold mb-2">Eventos Escolares</h3>
+                                <p class="text-muted mb-4">Consulta las fechas importantes y exámenes programados.</p>
+                                
+                                <div class="dropdown mt-2">
+                                    <button class="btn btn-primary dropdown-toggle btn-lg shadow-sm rounded-pill px-4" type="button" id="dropdownCalendario" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                        <i class="bi bi-calendar3 me-2"></i> Ver Calendario
+                                    </button>
+                                    
+                                    <!-- Menú del calendario -->
+                                    <div class="dropdown-menu shadow-lg p-3 border-0 rounded-4" aria-labelledby="dropdownCalendario" id="contenedor-calendario">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <button class="btn btn-light btn-sm rounded-3 border-0 px-3 py-2" id="mes-anterior">
+                                                <i class="bi bi-arrow-left text-dark"></i>
+                                            </button>
+                                            <h5 class="mb-0 fw-bold text-dark" id="mes-actual">Septiembre 2026</h5>
+                                            <button class="btn btn-light btn-sm rounded-3 border-0 px-3 py-2" id="mes-siguiente">
+                                                <i class="bi bi-arrow-right text-dark"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="d-flex text-secondary text-center mb-2 cabecera-dias">
+                                            <div class="w-100">Do</div><div class="w-100">Lu</div><div class="w-100">Ma</div>
+                                            <div class="w-100">Mi</div><div class="w-100">Ju</div><div class="w-100">Vi</div><div class="w-100">Sá</div>
+                                        </div>
+                                        
+                                        <div id="dias-calendario" class="d-flex flex-wrap text-center"></div>
+                                        
+                                        <div class="mt-3 pt-3 border-top text-center">
+                                            <button class="btn btn-outline-info rounded-pill px-4 btn-sm w-100">Agenda completa</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAREAS PENDIENTES -->
+                    <div class="col-lg-7">
+                        <div class="card border-0 shadow-sm h-100 p-4 bg-white">
+                            <h3 class="fw-bold mb-3 text-dark">Tareas Pendientes</h3>
+                            
+                            <div class="list-group rounded-3 shadow-sm border border-secondary" id="lista-tareas">
+                                
+                                <label class="list-group-item list-group-item-action d-flex gap-3 bg-dark text-white border-secondary border-bottom py-3 cursor-pointer">
+                                    <input class="form-check-input flex-shrink-0 mt-1 checkbox-tarea" type="checkbox" value="" style="font-size: 1.375em;">
+                                    <span>
+                                        <span class="d-block h5 mb-1 text-light">Cuadro Sinóptico</span>
+                                        <span class="d-block text-secondary small">Análisis semántico (Lenguajes y Autómatas II)</span>
+                                    </span>
+                                </label>
+
+                                <label class="list-group-item list-group-item-action d-flex gap-3 bg-dark text-white border-secondary border-bottom py-3 cursor-pointer">
+                                    <input class="form-check-input flex-shrink-0 mt-1 checkbox-tarea" type="checkbox" value="" style="font-size: 1.375em;">
+                                    <span>
+                                        <span class="d-block h5 mb-1 text-light">Mapa Conceptual</span>
+                                        <span class="d-block text-secondary small">Estructura web (Programación Web)</span>
+                                    </span>
+                                </label>
+                                
+                            </div>
+                            
+                            <div class="mt-4">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-muted small fw-bold">Progreso</span>
+                                    <span class="text-muted small fw-bold" id="texto-progreso">0%</span>
+                                </div>
+                                <div class="progress bg-light" style="height: 10px;">
+                                    <div class="progress-bar bg-success transition-all" id="barra-progreso" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 text-end">
+                                <button class="btn btn-dark shadow-sm px-4 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalSheetGuardar">
+                                    <i class="bi bi-cloud-arrow-up me-2"></i>Guardar Progreso
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETAS DE CURSOS -->
+                <h3 class="mb-4 fw-bold">Tus Cursos Asignados</h3>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 mb-5">
+                    
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark text-light rounded-4 overflow-hidden shadow-sm">
+                            <div class="card-body pb-0 pt-4">
+                                <h5 class="card-title text-info fw-bold mb-3">Programación Web</h5>
+                                <p class="card-text text-light opacity-75 small mb-4">Integración de HTML, CSS y JS.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex flex-column gap-2 pb-4 px-3">
+                                <button class="btn btn-outline-secondary w-100 btn-secundario-oscuro rounded-3 py-2">Ver materiales</button>
+                                <button class="btn btn-primary w-100 rounded-3 py-2">Entrar al Aula</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark text-light rounded-4 overflow-hidden shadow-sm">
+                            <div class="card-body pb-0 pt-4">
+                                <h5 class="card-title text-success fw-bold mb-3">Adm. de BD</h5>
+                                <p class="card-text text-light opacity-75 small mb-4">Gestión y consultas avanzadas.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex flex-column gap-2 pb-4 px-3">
+                                <button class="btn btn-outline-secondary w-100 btn-secundario-oscuro rounded-3 py-2">Ver materiales</button>
+                                <button class="btn btn-primary w-100 rounded-3 py-2">Entrar al Aula</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark text-light rounded-4 overflow-hidden shadow-sm">
+                            <div class="card-body pb-0 pt-4">
+                                <h5 class="card-title text-warning fw-bold mb-3">Redes de Comp.</h5>
+                                <p class="card-text text-light opacity-75 small mb-4">Protocolos y seguridad.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex flex-column gap-2 pb-4 px-3">
+                                <button class="btn btn-outline-secondary w-100 btn-secundario-oscuro rounded-3 py-2">Ver materiales</button>
+                                <button class="btn btn-primary w-100 rounded-3 py-2">Entrar al Aula</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark text-light rounded-4 overflow-hidden shadow-sm">
+                            <div class="card-body pb-0 pt-4">
+                                <h5 class="card-title text-danger fw-bold mb-3">Lenguajes y Aut. II</h5>
+                                <p class="card-text text-light opacity-75 small mb-4">Árboles de derivación.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex flex-column gap-2 pb-4 px-3">
+                                <button class="btn btn-outline-secondary w-100 btn-secundario-oscuro rounded-3 py-2">Ver materiales</button>
+                                <button class="btn btn-primary w-100 rounded-3 py-2">Entrar al Aula</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DASHBOARD (Rendimiento Académico) -->
+                <div class="card mt-5 mb-5 border-0 rounded-4 overflow-hidden shadow-lg" style="background-color: #212529;">
+                    <div class="card-header border-0 bg-transparent d-flex justify-content-between align-items-center pt-4 px-4">
+                        <h2 class="text-white fw-bold mb-0">Rendimiento Académico</h2>
+                        <div class="btn-group border border-secondary rounded-2">
+                            <button class="btn btn-sm text-secondary btn-secundario-oscuro border-0 border-end border-secondary">Comparte</button>
+                            <button class="btn btn-sm text-secondary btn-secundario-oscuro border-0 border-end border-secondary">Exportar</button>
+                            <button class="btn btn-sm text-secondary btn-secundario-oscuro border-0">Esta semana</button>
+                        </div>
+                    </div>
+                    <div class="card-body px-4 pb-4">
+                        <div class="position-relative w-100" style="height: 400px;">
+                            <canvas id="miGraficaDashboard"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5 border-secondary">
+
+                <!-- ========================================================= -->
+                <!-- SECCIÓN FINAL: DIRECTORIO, RETÍCULA Y PROYECTOS DESTACADOS -->
+                <!-- ========================================================= -->
+                
+                <h3 class="mb-4 fw-bold">Recursos Institucionales</h3>
+
+                <!-- NAVBAR OSCURO: DIRECTORIO DE BÚSQUEDA -->
+                <nav class="navbar navbar-expand-lg bg-dark border border-secondary rounded-3 mb-5 px-3 shadow-sm">
+                    <div class="container-fluid p-0">
+                        <a class="navbar-brand fw-bold text-white" href="#">
+                            <i class="bi bi-search me-2 text-primary"></i>Directorio Escolar
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDirectorio">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navDirectorio">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link active text-white" href="#">Docentes</a></li>
+                                <li class="nav-item"><a class="nav-link text-info" href="#">Tutorías</a></li>
+                                <li class="nav-item"><a class="nav-link disabled text-muted">Bolsa de Trabajo</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown">Departamentos</a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Control Escolar</a></li>
+                                        <li><a class="dropdown-item" href="#">Servicio Social</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control bg-dark border-secondary text-white border-opacity-50" type="search" placeholder="Buscar profesor o materia..." aria-label="Search" style="width: 250px;">
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- SISTEMA DE GRID: MAPA CURRICULAR -->
+                <div class="card bg-dark text-white border-secondary mb-5 p-4 rounded-4 shadow-sm">
+                    <h4 class="mb-2 fw-bold text-info"><i class="bi bi-map me-2"></i>Estructura Curricular (Ejemplo de Retícula)</h4>
+                    <p class="text-secondary small mb-4">Esta cuadrícula interactiva muestra la seriación de materias correspondientes a la retícula de Sistemas Computacionales organizada por créditos y semestres.</p>
+                    
+                    <div class="container-fluid p-0">
+                        <!-- Semestre 1 -->
+                        <div class="row text-center g-0 mb-3 border border-secondary rounded-2 overflow-hidden fw-bold" style="font-size: 0.85rem;">
+                            <div class="col-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Cálculo Diferencial (5)</div>
+                            <div class="col-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Fundamentos de Prog. (5)</div>
+                            <div class="col-4 p-3" style="background-color: #1c2633;">Matemáticas Discretas (5)</div>
+                        </div>
+                        <!-- Semestre 2 -->
+                        <div class="row text-center g-0 mb-3 border border-secondary rounded-2 overflow-hidden fw-bold" style="font-size: 0.85rem;">
+                            <div class="col-sm-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Cálculo Integral (5)</div>
+                            <div class="col-sm-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Prog. Orientada a Objetos (5)</div>
+                            <div class="col-sm-4 p-3" style="background-color: #1c2633;">Probabilidad y Est. (5)</div>
+                        </div>
+                        <!-- Semestre 3 -->
+                        <div class="row text-center g-0 mb-3 border border-secondary rounded-2 overflow-hidden fw-bold" style="font-size: 0.85rem;">
+                            <div class="col-md-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Álgebra Lineal (5)</div>
+                            <div class="col-md-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Estructura de Datos (5)</div>
+                            <div class="col-md-4 p-3" style="background-color: #1c2633;">Física General (5)</div>
+                        </div>
+                        <!-- Semestre 4 -->
+                        <div class="row text-center g-0 mb-3 border border-secondary rounded-2 overflow-hidden fw-bold text-info" style="font-size: 0.85rem;">
+                            <div class="col-lg-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Redes de Computadoras (5)</div>
+                            <div class="col-lg-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Fund. de Base de Datos (5)</div>
+                            <div class="col-lg-4 p-3" style="background-color: #1c2633;">Lenguajes y Autómatas I (5)</div>
+                        </div>
+                        <!-- Semestre Actual -->
+                        <div class="row text-center g-0 border border-secondary rounded-2 overflow-hidden fw-bold text-warning" style="font-size: 0.85rem;">
+                            <div class="col-xl-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Adm. de Base de Datos (5)</div>
+                            <div class="col-xl-4 p-3 border-end border-secondary" style="background-color: #1c2633;">Programación Web (5)</div>
+                            <div class="col-xl-4 p-3" style="background-color: #1c2633;">Lenguajes y Autómatas II (5)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALBUM EXAMPLE: GALERÍA DE PROYECTOS -->
+                <div class="card bg-dark text-white border-secondary p-5 rounded-4 shadow-sm text-center">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto mb-5">
+                            <h2 class="fw-bold mb-3"><i class="bi bi-star me-2 text-warning"></i>Proyectos Estudiantiles Destacados</h2>
+                            <p class="lead text-secondary mb-4 small">Explora los repositorios y demostraciones en vivo de los proyectos finales desarrollados por los estudiantes de los últimos semestres en diversas materias de la ingeniería.</p>
+                            <div>
+                                <a href="#" class="btn btn-primary px-4 me-2"><i class="bi bi-github me-2"></i>Repositorio General</a>
+                                <a href="#" class="btn btn-secondary px-4 text-white" style="background-color: #495057; border: none;">Subir mi proyecto</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 text-start">
+                        
+                        <!-- Proyecto 1 -->
+                        <div class="col">
+                            <div class="card h-100 bg-dark border-secondary rounded-0 shadow">
+                                <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center border-bottom border-secondary overflow-hidden" style="height: 180px;">
+                                    <!-- Si tienes imágenes para esto, puedes reemplazar este ícono con un <img src="..."> -->
+                                    <i class="bi bi-browser-chrome text-dark" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-info">E-Commerce App</h5>
+                                    <p class="card-text text-white small mb-4 opacity-75">Plataforma de comercio electrónico funcional desarrollada como proyecto final de la materia de Programación Web usando Bootstrap y JS.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group border border-secondary rounded-1">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 border-end border-secondary py-1 px-3">Live Demo</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 py-1 px-3">Código</button>
+                                        </div>
+                                        <span class="badge bg-secondary">Web</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Proyecto 2 -->
+                        <div class="col">
+                            <div class="card h-100 bg-dark border-secondary rounded-0 shadow">
+                                <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center border-bottom border-secondary overflow-hidden" style="height: 180px;">
+                                    <i class="bi bi-database text-dark" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-success">Sistema de Inventario</h5>
+                                    <p class="card-text text-white small mb-4 opacity-75">Base de datos normalizada e interfaz de gestión para el control de inventarios de una ferretería local. Incluye reportes y triggers.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group border border-secondary rounded-1">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 border-end border-secondary py-1 px-3">Ver Esquema</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 py-1 px-3">Código</button>
+                                        </div>
+                                        <span class="badge bg-secondary">BDD</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 3 -->
+                        <div class="col">
+                            <div class="card h-100 bg-dark border-secondary rounded-0 shadow">
+                                <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center border-bottom border-secondary overflow-hidden" style="height: 180px;">
+                                    <i class="bi bi-diagram-3 text-dark" style="font-size: 4rem;"></i>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold text-danger">Compilador Mini-C</h5>
+                                    <p class="card-text text-white small mb-4 opacity-75">Analizador léxico, sintáctico y semántico construido para la clase de Lenguajes y Autómatas II. Capaz de generar árboles de derivación.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group border border-secondary rounded-1">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 border-end border-secondary py-1 px-3">Documentación</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary text-secondary border-0 py-1 px-3">Código</button>
+                                        </div>
+                                        <span class="badge bg-secondary">Autómatas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- MODAL DE GUARDADO -->
+    <div class="modal fade modal-sheet" id="modalSheetGuardar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-0 rounded-4 shadow-lg p-2" style="background-color: #212529 !important;">
+                <div class="modal-header border-0 pb-1">
+                    <h5 class="modal-title fw-bold">Guardar Progreso</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body border-0 pt-1 pb-3 text-light opacity-75" style="font-size: 0.9rem;">
+                    ¿Deseas guardar los cambios realizados en tu lista de tareas y sincronizarlos con el servidor de la institución?
+                </div>
+                <div class="modal-footer border-0 d-flex flex-column gap-2 pt-0">
+                    <button type="button" class="btn btn-primary w-100 rounded-3 m-0 py-2" id="btnGuardarModal">Guardar Cambios</button>
+                    <button type="button" class="btn w-100 rounded-3 m-0 text-white py-2" data-bs-dismiss="modal" style="background-color: #6c757d;">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIBRERÍAS Y SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

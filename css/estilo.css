@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+/* =========================================
+   CARRUSEL BANNER
+   ========================================= */
+.img-carrusel {
+    height: 250px;           
+    object-fit: cover;
+    object-position: center; 
+}
+.capa-oscura {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); z-index: 1;
+}
+.carousel-caption {
+    z-index: 2; top: 50%; bottom: auto; transform: translateY(-50%);
+}
+.carousel-caption h1.display-4 {
+    font-size: 2.5rem; margin-bottom: 0.5rem;
+}
+.carousel-caption p.lead {
+    font-size: 1.1rem; margin-bottom: 1rem;
+}
+.carousel-indicators [data-bs-target] {
+    width: 40px; height: 4px; background-color: #ffffff;
+    border-top: 10px solid transparent; border-bottom: 10px solid transparent;
+    opacity: 0.5; transition: opacity 0.6s ease;
+}
+.carousel-indicators .active { opacity: 1; }
+
+/* =========================================
+   BREADCRUMB STEPPER
+   ========================================= */
+.custom-stepper {
+    display: flex; background-color: #212529; list-style: none; border: 1px solid #343a40;
+}
+.custom-stepper .breadcrumb-item + .breadcrumb-item::before { display: none; }
+.step-item { flex: 1; text-align: center; position: relative; padding: 0; margin: 0; }
+.step-link {
+    display: block; padding: 12px 20px; background-color: #2b3035;
+    text-decoration: none; position: relative; z-index: 2; transition: 0.3s ease;
+}
+.step-item:not(.active-step) .step-link:hover { background-color: #343a40; }
+.step-item:not(:last-child)::after {
+    content: ''; position: absolute; top: 0; right: -15px; width: 30px; height: 100%;
+    background-color: #2b3035; border-top: 1px solid #495057; border-right: 1px solid #495057;
+    transform: scale(0.707) rotate(45deg); z-index: 3; transition: 0.3s ease;
+}
+.step-item:not(.active-step):hover::after { background-color: #343a40; }
+.active-step .step-link { background-color: #212529; }
+
+/* =========================================
+   CALENDARIO
+   ========================================= */
+#contenedor-calendario {
+    width: 340px; 
+    background-color: #ffffff;
+    z-index: 9999 !important; /* Prioridad máxima para evitar que quede atrás */
+}
+#contenedor-calendario .btn:focus { box-shadow: none; background-color: #e2e6ea; }
+.cabecera-dias div { font-size: 0.9rem; font-weight: 500; }
+.dia-celda {
+    width: 14.28%; height: 42px; line-height: 42px; cursor: pointer; border-radius: 50%;
+    transition: 0.2s ease; font-weight: 600; font-size: 1rem; color: #212529;
+}
+.dia-celda:not(.texto-muted):hover { background-color: #e9ecef; color: #000; }
+.dia-hoy { background-color: #0d6efd !important; color: #ffffff !important; }
+.dia-seleccionado { background-color: #212529 !important; color: #ffffff !important; }
+.texto-muted { color: #adb5bd !important; font-weight: 400; cursor: default; }
+
+/* =========================================
+   TAREAS (CHECKBOXES)
+   ========================================= */
+.cursor-pointer { cursor: pointer; }
+#lista-tareas .list-group-item:hover { background-color: #2c3034 !important; }
+.checkbox-tarea:checked { background-color: #0d6efd; border-color: #0d6efd; }
+.tarea-completada { opacity: 0.6; }
+.tarea-completada span.h5 { text-decoration: line-through; color: #adb5bd; }
+.transition-all { transition: all 0.4s ease-in-out; }
+
+/* =========================================
+   TARJETAS Y BOTONES CUSTOM
+   ========================================= */
+.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important; }
+
+.btn-secundario-oscuro {
+    color: #adb5bd; border-color: #495057; background-color: transparent;
+}
+.btn-secundario-oscuro:hover {
+    color: #ffffff; background-color: #495057; border-color: #495057;
+}
+.btn-primary { background-color: #0d6efd; border-color: #0d6efd; font-weight: 500; }
+
+/* =========================================
+   MODAL SHEET (MÓVILES)
+   ========================================= */
+@media (max-width: 576px) {
+    .modal-sheet .modal-dialog { position: absolute; bottom: 0; margin: 0; width: 100%; }
+    .modal-sheet .modal-content { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+}
